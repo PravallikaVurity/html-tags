@@ -1,0 +1,11 @@
+@import url("./style2.css");
+
+form{
+    paadding:40px;
+    background-color: aquamarine;
+}
+fieldset{
+    border-radius: 30px;
+    background-color: darkmagenta;
+    padding:30px;
+}
