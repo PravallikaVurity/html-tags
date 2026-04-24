@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+        }
+        .container {
+            width: 420px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .radio-group {
+            margin-top: 5px;
+        }
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .submit-btn {
+            margin-top: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Service Request Form</h2>
+
+    <form action="#" method="post">
+
+        <!-- Customer Name -->
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" name="customer_name" placeholder="Enter your name" required>
+
+        <!-- Contact Number -->
+        <label for="phone">Contact Number:</label>
+        <input type="tel" id="phone" name="contact_number" 
+               placeholder="Enter 10-digit number" 
+               pattern="[0-9]{10}" required>
+
+        <!-- Issue Type -->
+        <label for="issue">Issue Type:</label>
+        <select id="issue" name="issue_type" required>
+            <option value="">--Select Issue--</option>
+            <option value="laptop">Laptop Repair</option>
+            <option value="internet">Internet Issue</option>
+            <option value="software">Software Problem</option>
+            <option value="hardware">Hardware Issue</option>
+        </select>
+
+        <!-- Description -->
+        <label for="desc">Description:</label>
+        <textarea id="desc" name="description" rows="4" 
+                  placeholder="Describe your issue..." required></textarea>
+
+        <!-- Priority -->
+        <label>Priority:</label>
+        <div class="radio-group">
+            <input type="radio" name="priority" value="low" required>Low
+            <input type="radio" name="priority" value="medium">Medium
+            <input type="radio" name="priority" value="high">High
+        </div>
+
+        <!-- Submit -->
+        <input type="submit" value="Submit Request" class="submit-btn">
+
+    </form>
+</div>
+
+</body>
+</html>

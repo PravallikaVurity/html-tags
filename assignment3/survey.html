@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-group input,
+        .checkbox-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .submit-btn {
+            margin-top: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Survey Form</h2>
+
+    <form action="#" method="post">
+
+        <!-- User Name -->
+        <label for="name">User Name:</label>
+        <input type="text" id="name" name="username" placeholder="Enter your name" required>
+
+        <!-- Feedback -->
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+
+        <!-- Rating -->
+        <label>Rating:</label>
+        <div class="radio-group">
+            <input type="radio" name="rating" value="1" required>1
+            <input type="radio" name="rating" value="2">2
+            <input type="radio" name="rating" value="3">3
+            <input type="radio" name="rating" value="4">4
+            <input type="radio" name="rating" value="5">5
+        </div>
+
+        <!-- Favorite Technology -->
+        <label for="tech">Favorite Technology:</label>
+        <select id="tech" name="technology" required>
+            <option value="">--Select Technology--</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+        </select>
+
+        <!-- Subscribe -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label>
+        </div>
+
+        <!-- Submit -->
+        <input type="submit" value="Submit" class="submit-btn">
+
+    </form>
+</div>
+
+</body>
+</html>
