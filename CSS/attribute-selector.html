@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img[alt^="ima"]{
+            height:250px;
+            width:250px;
+            border-radius: 30px;
+        }
+       /*h1[id$="tag"]{
+            color: red;
+        }*/
+        /*h1[id|="heading"]{
+            color: green;
+            background-color: lightblue;
+        }*/
+        h1[id*="h"]{
+            color: burlywood;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">headings</h1>
+    <h1 id="heading-tag">headings</h1>
+    <h1 id="heading tag">headings</h1>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/049/855/347/small/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-photo.jpg" alt="image1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIgn8Q7sPVVVd33OdTN2P9t_spzVwPFP71Aw&s" alt="image2">
+</body>
+</html>

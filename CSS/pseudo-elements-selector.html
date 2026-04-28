@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::after{
+            content:" class" ;
+            color:aqua;
+        }
+        label::after{
+            content: "*";
+            color:brown;
+        }
+        #heading::before{
+            content:"💻" ;
+        }
+        label:last-of-type::before{
+            content: "📩" ;
+        }
+        label:first-of-type::before{
+            content: "🙎" ;
+        }
+        form{
+            background-color: yellow;
+        }
+        h2:first-letter{
+            color:crimson;
+            font-size: 50px;
+            font-style: italic;
+            text-shadow: 3px 3px 3px black;
+        }
+        p::first-line{
+            font-style: oblique;
+            font-weight:bold;
+            color: brown;
+            background-color: antiquewhite;
+        }
+        li:first-child::marker{
+            content: ":)";
+        }
+        li:nth-child(2)::marker{
+            content: "👉";
+        }
+        li:nth-child(3)::marker, li:nth-child(4)::marker{
+            color: darkred;
+            font-style: italic;
+        }
+        div::selection{
+            color: darkred;
+            background-color: aquamarine;
+        }
+        p::selection{
+            color:beige;
+            background-color: brown;
+        }
+        input::placeholder{
+            color: coral;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="heading">welcome to day6</h1>
+    <form section="">
+        <fieldset>
+            <h2 align="center">Register form</h2>
+            <label for="">First name</label>
+            <input type="text" placeholder="Enter first name">
+            <br><br>
+            <label for="">Email</label>
+            <input type="text" placeholder="Enter your email">
+            <br><br>
+        </fieldset>
+    </form>
+    <ol>
+        <li>list-items-1</li>
+        <li>list-items-2</li>
+        <li>list-items-3</li>
+        <li>list-items-4</li>
+    </ol>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit minus error mollitia perferendis inventore natus. Dicta aperiam cumque velit aliquam vitae laborum, cupiditate illo? Natus autem libero voluptas possimus!
+    Ratione, dolorem reiciendis. Maiores, illo vitae aspernatur nulla nemo dolor voluptate, consectetur eos totam impedit molestias numquam ad dolorem! Officiis adipisci sequi ipsum, voluptate architecto laudantium impedit vitae quasi dolorum?
+    Perferendis obcaecati inventore quas eaque delectus hic ducimus eveniet. Sunt voluptate iste debitis quis. In debitis eligendi ipsa earum praesentium culpa molestiae sequi non asperiores recusandae, quam, aliquam laboriosam? Quisquam!
+</p>
+<div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi quibusdam sequi distinctio harum nemo id nostrum quisquam eveniet doloribus rerum. Pariatur cupiditate at est voluptatem magni iste, consectetur non dignissimos.
+    Commodi temporibus laudantium praesentium sequi sint velit assumenda, deserunt, qui expedita nemo nulla voluptatum voluptate id aliquid eveniet. Sint iusto, consequatur aliquam laborum eveniet repellendus aspernatur ut! Voluptates, repellat magnam?
+</div>
+</body>
+</html>
