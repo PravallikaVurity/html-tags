@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: sticky (important);
+            top: 0 (important);
+            z-index: 2;
+        }
+
+
+        ol {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 20px;
+            align-items: center;
+            flex-direction: row;
+            background-color: purple;
+            list-style: none;
+            flex-wrap: wrap-reverse;
+
+        }
+
+        li {
+            color: rgb(10, 10, 10);
+            background-color: burlywood;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-style: italic;
+            flex-grow: 1;
+            margin: 10px 20px;
+            text-align: center;
+            text-shadow: black;
+
+        }
+
+        video {
+            width: 100vw;
+            height: 550px;
+        }
+
+        #electronic-devices {
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            bottom: 100px;
+            backdrop-filter: blur(10px);
+            background-image: linear-gradient(gray, rgb(43 40 40));
+        }
+
+        #electronic-devices>div {
+            height: 450px;
+            width: 350px;
+            border: 5px solid green;
+            margin: 20px;
+            display: FLEX;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: rgb(230 230 240);
+            animation-name: moving;
+            animation-duration: 4s;
+        }
+
+        h1 {
+            position: absolute;
+            top: 150px;
+            backdrop-filter: blur(10px);
+            text-shadow: 4px 4px 4px aliceblue;
+            padding: 10px 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px black;
+            animation-name: scaling;
+            animation-duration: 3s;
+
+        }
+
+        #product-card img {
+            height: 250px;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        #product-card img:hover {
+            transform: skew(10deg);
+            box-shadow: 2px 2px 8px aliceblue;
+        }
+
+        .product-info h4 {
+            color: crimson;
+            margin-left: 25px;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .product-info h4,
+        p {
+            color: crimson;
+            margin-left: 25px;
+            font-style: oblique;
+
+        }
+
+        .btn-container>button {
+            padding: 10px 20px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: none;
+            margin: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .btn-container>button:first-child {
+            background-color: rgb(192 242 242);
+        }
+
+        .btn-container>button:last-child {
+            background-color: rgb(7, 35, 245);
+
+        }
+
+        #electronic-devices-section {
+            position: relative;
+            bottom: 40px;
+            left: 40px;
+            z-index: 1;
+            font-size: 40px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: italic;
+        }
+
+        #electronic-devices-section:hover {
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px aliceblue;
+            color: plum;
+            cursor: pointer;
+            translate: scaleY(1.5);
+        }
+
+        aside {
+            position: fixed;
+            top: 40%;
+            padding: 30px 10px;
+            display: inline-flex;
+            flex-direction: column;
+            z-index: 1;
+            margin-left: 10px;
+            border-radius: 50px;
+            height: 250px;
+            justify-content: space-evenly;
+            background-image: radial-gradient(transparent, black);
+        }
+
+        aside img:hover {
+            cursor: pointer;
+            box-shadow: 2px 2px 5px black;
+            transform: translate(10px);
+
+        }
+
+        aside img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        @keyframes scaling {
+            0% {
+                transform: scale(0);
+            }
+
+            25% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes moving {
+            from {
+                transform: translateY(200px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+        }
+
+        body {
+            background-color: aliceblue;
+            animation-name: bgcolorchange;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: 5s;
+        }
+
+        @keyframes bgcolorchange {
+            0% {
+                background-color: aliceblue;
+            }
+
+            10% {
+                background-color: blueviolet;
+            }
+
+            20% {
+                background-color: burlywood;
+            }
+
+            30% {
+                background-color: cadetblue;
+            }
+
+            40% {
+                background-color: coral;
+            }
+
+            50% {
+                background-color: lightblue;
+            }
+
+            60% {
+                background-color: rgb(181, 20, 20);
+            }
+
+            70% {
+                background-color: yellow;
+            }
+             80%{
+                background-color: green;
+            }
+             90%{
+                background-color: linen;
+            }
+             100%{
+                background-color: paleturquoise;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ol>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+            <li>HELP</li>
+            <li>LOGIN</li>
+        </ol>
+    </nav>
+    <main>
+        <section id="background video">
+            <video src="./12617477_1920_1080_25fps.mp4 " loop autoplay></video>
+        </section>
+        <section>
+            <h1>WELCOME TO ALPHA MART</h1>
+        </section>
+        <h2 id="electronic-devices-section">ELECTRONIC DEVICES :</h2>
+        <section id="electronic-devices">
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+            <div id="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbcp0QQjCQZnHKx7oTm3Um3VcF8NDB3JVFQ&s"
+                    alt="">
+                <div class="product-info">
+                    <h4>NAME: LAPTOP</h4>
+                    <h4>COST:₹50000</h4>
+                    <h4>RATING:4.5/5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ducimus voluptas, minus,
+                        voluptatibus, temporibus quibusdam ipsa eveniet sint perferendis sapiente sit repudiandae quam
+                        vero quod eius facere harum quis fugit!</p>
+                </div>
+                <div class="btn-container">
+                    <button>BUY</button>
+                    <button>ADD CARD</button>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <aside>
+                <img src="https://www.svgrepo.com/show/416500/youtube-circle-logo.svg" alt="">
+                <img src="https://www.svgrepo.com/show/303299/linkedin-icon-2-logo.svg" alt="">
+                <img src="https://www.svgrepo.com/show/303113/facebook-icon-logo.svg" alt="">
+                <img src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg" alt="">
+            </aside>
+        </section>
+    </main>
+</body>
+
+</html>
