@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Authentication</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.container{
+    width:420px;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5a67d8;
+}
+
+.link{
+    text-align:center;
+    margin-top:15px;
+}
+
+.link a{
+    color:#667eea;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+#welcome{
+    font-size:28px;
+    text-align:center;
+    margin-bottom:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="app"></div>
+
+<script>
+
+showRegister();
+
+/* ===========================
+REGISTER PAGE
+=========================== */
+function showRegister(){
+
+document.body.style.background="linear-gradient(135deg,#667eea,#764ba2)";
+
+document.getElementById("app").innerHTML=`
+
+<h2>User Registration</h2>
+
+<input type="text" id="username" placeholder="Enter Username">
+<input type="email" id="email" placeholder="Enter Email">
+<input type="password" id="password" placeholder="Enter Password">
+<input type="tel" id="phone" placeholder="Enter Phone Number">
+
+<button onclick="registerUser()">Register</button>
+
+<div class="link">
+Already Registered?
+<a onclick="showLogin()">Login</a>
+</div>
+
+`;
+}
+
+/* ===========================
+REGISTER FUNCTION
+=========================== */
+function registerUser(){
+
+let username=document.getElementById("username").value.trim();
+let email=document.getElementById("email").value.trim();
+let password=document.getElementById("password").value.trim();
+let phone=document.getElementById("phone").value.trim();
+
+if(username=="" || email=="" || password=="" || phone==""){
+    alert("All fields are required");
+    return;
+}
+
+let user={
+    username:username,
+    email:email,
+    password:password,
+    phone:phone
+};
+
+localStorage.setItem("userData",JSON.stringify(user));
+
+alert("Registration Successful");
+
+showLogin();
+}
+
+/* ===========================
+LOGIN PAGE
+=========================== */
+function showLogin(){
+
+document.body.style.background="linear-gradient(135deg,#11998e,#38ef7d)";
+
+document.getElementById("app").innerHTML=`
+
+<h2>User Login</h2>
+
+<input type="text" id="loginUser" placeholder="Enter Username">
+<input type="password" id="loginPass" placeholder="Enter Password">
+
+<button onclick="loginUser()">Login</button>
+
+<div class="link">
+No Account?
+<a onclick="showRegister()">Register</a>
+</div>
+
+`;
+}
+
+/* ===========================
+LOGIN FUNCTION
+=========================== */
+function loginUser(){
+
+let username=document.getElementById("loginUser").value.trim();
+let password=document.getElementById("loginPass").value.trim();
+
+let storedUser=JSON.parse(localStorage.getItem("userData"));
+
+if(!storedUser){
+    alert("Please Register First");
+    showRegister();
+    return;
+}
+
+if(username==storedUser.username && password==storedUser.password){
+
+    localStorage.setItem("loginStatus","true");
+
+    showHome();
+
+}else{
+    alert("Invalid Username or Password");
+}
+
+}
+
+/* ===========================
+HOME PAGE
+=========================== */
+function showHome(){
+
+document.body.style.background="linear-gradient(135deg,#ff9a9e,#fad0c4)";
+
+let user=JSON.parse(localStorage.getItem("userData"));
+
+document.getElementById("app").innerHTML=`
+
+<h2 id="welcome">Welcome, ${user.username}</h2>
+
+<button onclick="logoutUser()">Logout</button>
+
+`;
+
+}
+
+/* ===========================
+LOGOUT
+=========================== */
+function logoutUser(){
+
+localStorage.removeItem("loginStatus");
+
+alert("Logout Successfully");
+
+showLogin();
+
+}
+
+</script>
+
+</body>
+</html>

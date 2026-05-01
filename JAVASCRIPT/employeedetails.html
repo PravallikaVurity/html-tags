@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tbody tr:nth-child(odd) {
+            background-color: yellowgreen;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Emp Details</h1>
+    <input type="search" id="input" placeholder="Search Employees">
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr bgcolor="beige">
+                <th>Names </th>
+                <th>Roles</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Phone No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ravi</td>
+                <td>developer</td>
+                <td>20000</td>
+                <td>guntur</td>
+                <td>9876543210</td>
+            </tr>
+            <tr>
+                <td>Teja</td>
+                <td>test engineer</td>
+                <td>30000</td>
+                <td>vizag</td>
+                <td>8976543210</td>
+            </tr>
+            <tr>
+                <td>Vivek</td>
+                <td>technician</td>
+                <td>25000</td>
+                <td>vijayawada</td>
+                <td>7890654321</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolores sed velit! Iusto dolorem voluptas rem veritatis temporibus totam fuga nam, odit ea beatae! Error quibusdam dolorum explicabo provident laboriosam?
+    </p>
+    <button onclick="dissapearParagraph()">Click Here</button>
+    <script>
+        function dissapearParagraph(){
+            let para=document.querySelector("p");
+            para.style.display= (para.style.display=="block")?"none": "block"
+
+        }
+        let rows = document.querySelectorAll("tbody tr");
+        let input = document.querySelector("input");
+       
+        input.addEventListener('keyup', () => {
+            let inputText = input.value.toLowerCase()
+             rows.forEach((row)=>{
+            let rowData=row.textContent;
+            let result=rowData.toLocaleLowerCase().includes(inputText);
+            console.log(result);
+            row.style.display=result?"": "none"
+            
+        })
+        
+        })
+        //input.onkeyup =()=>{
+        //    console.log(input.value);
+
+        //}
+
+
+
+
+    </script>
+</body>
+
+</html>
