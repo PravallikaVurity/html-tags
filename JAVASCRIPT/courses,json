@@ -1,0 +1,28 @@
+[
+    {
+        "name": "javafull stack",
+        "duration": "6 months",
+        "fees": "65000",
+        "topics": [
+            "core java",
+            "jdbs",
+            "hibernates",
+            "servelets",
+            "spring MVC",
+            "spring boot",
+            "spring microservices"
+        ] ,
+        "poster":""
+    },{
+        "name":"MERN",
+        "duration":"5 months",
+        "fees":"62000",
+        "topics": [
+            "css",
+            "js",
+            "mongodb",
+            "api integration"
+        ] 
+
+    }
+]

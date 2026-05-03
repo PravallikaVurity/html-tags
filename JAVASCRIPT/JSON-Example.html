@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let jsonData =`{ 
+            
+                "name": "ravi",
+                "rollno": 500,
+                "active": true
+        }`
+         /*{
+             "name": "rani",
+                "rollno": 520,
+                "active": true
+            },
+            {
+                "name": "teja",
+                "rollno": 521,
+                "active": true,
+                "skills": ["html","css"],
+                "address": {
+                    "city": "vizag",
+                    "pincode": 561390
+                },
+
+            },*/
+        
+
+        console.log(JSON.parse(jsonData));
+        
+       let collegeDetails={
+        name:"BITS",
+        location:"VIZAG",
+        courses:["B.TECH","M.TECH","MCA","BCA"]
+       }
+       console.log(collegeDetails);
+       console.log(JSON.stringify(collegeDetails));
+       document.write(JSON.stringify(collegeDetails));
+       localStorage.setItem("college",JSON.stringify(collegeDetails))
+       
+       
+        
+    </script>
+</body>
+
+</html>

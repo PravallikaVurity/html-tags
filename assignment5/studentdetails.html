@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Table</title>
+</head>
+<body>
+
+<script>
+
+// heading
+let heading = document.createElement("h1");
+heading.innerText = "Student Details";
+document.body.appendChild(heading);
+
+// table
+let table = document.createElement("table");
+table.border = "1";
+table.cellPadding = "10";
+table.cellSpacing = "0";
+document.body.appendChild(table);
+
+// header row
+let header = document.createElement("tr");
+
+let headings = ["Name","Roll No","CNN","CPP","ADE","DSA","Total","Percentage","Actions"];
+
+for(let i=0; i<headings.length; i++){
+    let th = document.createElement("th");
+    th.innerText = headings[i];
+    header.appendChild(th);
+}
+
+table.appendChild(header);
+
+// 20 students data
+let students = [
+{name:"Ravi",roll:"HU101",cnn:90,cpp:80,ade:85,dsa:88},
+{name:"Rani",roll:"HU102",cnn:70,cpp:75,ade:72,dsa:74},
+{name:"Rahul",roll:"HU103",cnn:55,cpp:58,ade:60,dsa:57},
+{name:"Sneha",roll:"HU104",cnn:95,cpp:96,ade:94,dsa:97},
+{name:"Kiran",roll:"HU105",cnn:40,cpp:45,ade:42,dsa:38},
+{name:"Priya",roll:"HU106",cnn:85,cpp:82,ade:88,dsa:84},
+{name:"Teja",roll:"HU107",cnn:62,cpp:68,ade:65,dsa:60},
+{name:"Anil",roll:"HU108",cnn:78,cpp:76,ade:80,dsa:79},
+{name:"Meena",roll:"HU109",cnn:92,cpp:91,ade:90,dsa:94},
+{name:"Harsha",roll:"HU110",cnn:50,cpp:52,ade:55,dsa:48},
+{name:"Divya",roll:"HU111",cnn:88,cpp:86,ade:84,dsa:90},
+{name:"Ajay",roll:"HU112",cnn:67,cpp:69,ade:70,dsa:66},
+{name:"Bhanu",roll:"HU113",cnn:73,cpp:71,ade:75,dsa:74},
+{name:"Pooja",roll:"HU114",cnn:58,cpp:60,ade:62,dsa:57},
+{name:"Mohan",roll:"HU115",cnn:30,cpp:35,ade:28,dsa:32},
+{name:"Vikas",roll:"HU116",cnn:98,cpp:96,ade:99,dsa:97},
+{name:"Keerthi",roll:"HU117",cnn:64,cpp:66,ade:63,dsa:65},
+{name:"Nikhil",roll:"HU118",cnn:81,cpp:83,ade:79,dsa:80},
+{name:"Lakshmi",roll:"HU119",cnn:45,cpp:48,ade:50,dsa:46},
+{name:"Suresh",roll:"HU120",cnn:77,cpp:79,ade:76,dsa:78}
+];
+
+// rows
+for(let i=0; i<students.length; i++){
+
+    let s = students[i];
+
+    let total = s.cnn + s.cpp + s.ade + s.dsa;
+    let per = total / 4;
+
+    let row = document.createElement("tr");
+
+    if(per >= 85){
+        row.style.backgroundColor = "lightgreen";
+    }
+    else if(per >= 65){
+        row.style.backgroundColor = "yellow";
+    }
+    else if(per >= 55){
+        row.style.backgroundColor = "orange";
+    }
+    else{
+        row.style.backgroundColor = "red";
+    }
+
+    let values = [
+        s.name,
+        s.roll,
+        s.cnn,
+        s.cpp,
+        s.ade,
+        s.dsa,
+        total,
+        per.toFixed(2) + "%"
+    ];
+
+    for(let j=0; j<values.length; j++){
+        let td = document.createElement("td");
+        td.innerText = values[j];
+        row.appendChild(td);
+    }
+
+    // buttons
+    let action = document.createElement("td");
+
+    let editBtn = document.createElement("button");
+    editBtn.innerText = "Edit";
+
+    let delBtn = document.createElement("button");
+    delBtn.innerText = "Delete";
+
+    action.appendChild(editBtn);
+    action.appendChild(delBtn);
+
+    row.appendChild(action);
+
+    table.appendChild(row);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "name":"ravi",
+    "rollno":500,
+    "active":true
+},
+{
+    "name":"rani",
+    "rollno":520,
+    "active":true
+},
+{
+    "name":"teja",
+    "rollno":521,
+    "active":true
+    "skills":["html","css"],
+    "address":{
+        "city":"vizag",
+        "pincode":56139
+    },
+
+}
+
