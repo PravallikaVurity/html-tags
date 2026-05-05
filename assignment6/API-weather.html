@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: #4facfe;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0077ff;
+    }
+
+    .weather-box {
+      margin-top: 20px;
+    }
+
+    .weather-box img {
+      width: 80px;
+    }
+
+    .temp {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    @media(max-width: 400px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Weather App</h1>
+
+    <input type="text" id="city" placeholder="Enter city">
+    <button onclick="getWeather()">Search</button>
+
+    <div class="weather-box" id="weather"></div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    function getWeather() {
+      let city = document.getElementById("city").value;
+      let apiKey = "61962479962d4c0ab0a160437262102";
+
+      let url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+
+          if (data.error) {
+            document.getElementById("error").innerText = "Please enter a city name";
+            document.getElementById("weather").innerHTML = "No data to display";
+            return;
+          }
+
+          document.getElementById("error").innerText = "";
+
+          let weatherHTML = `
+            <h2>${data.location.name}, ${data.location.country}</h2>
+            <img src="${data.current.condition.icon}">
+            <div class="temp">${data.current.temp_c}°C</div>
+            <div>${data.current.condition.text}</div>
+            <div class="info">Humidity: ${data.current.humidity}%</div>
+            <div class="info">Wind: ${data.current.wind_kph} km/h</div>
+          `;
+
+          document.getElementById("weather").innerHTML = weatherHTML;
+        })
+        .catch(error => {
+          document.getElementById("error").innerText = "Something went wrong!";
+          console.log(error);
+        });
+    }
+  </script>
+
+</body>
+</html>

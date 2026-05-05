@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .menu li a:hover {
+            background-color: grey;
+            border-radius: 5px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 750px) {
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: black;
+                width: 100%;
+            }
+
+            .menu li {
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

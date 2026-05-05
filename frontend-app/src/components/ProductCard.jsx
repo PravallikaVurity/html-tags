@@ -1,0 +1,20 @@
+const ProductCard = (props) => {
+    return <>
+        <div id="product-container">
+            <img src={props.details.imgSrc} alt="" />
+            <p>
+                <h4>Name : {props.details.name}</h4>
+                <h4>Price : {props.details.price}</h4>
+                <h4>Description : {props.details.description}</h4>
+                <h4>Ratings : {props.details.rating}</h4>
+                <button onClick={() => {
+                    console.log(cart);
+                    setCart(cart + 1)
+                }}>Add Cart</button>
+            </p>
+        </div>
+
+    </>
+
+}
+export default ProductCard;
