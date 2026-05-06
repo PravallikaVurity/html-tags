@@ -1,0 +1,58 @@
+/* Background */
+body {
+  background: linear-gradient(plum);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Center Card */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Styling */
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgb(244, 234, 234);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 10px;
+}
+
+/* Buttons */
+.btn-custom {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Home Page */
+.home-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.home-box {
+  background: rgba(24, 23, 23, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.home-buttons a {
+  margin: 10px;
+}
